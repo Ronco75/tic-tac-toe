@@ -36,7 +36,6 @@ boxes.forEach((box, index) => {
             
             if (playerWin(currentPlayer)) {
                 heading.innerText = `${currentPlayer} Win!`
-                // return;
             }
             
         }
@@ -77,15 +76,14 @@ const playerWin = (player) => {
         if (spaces[1] === player && spaces[7] === player) {
             heading.innerText = `${player} Wins`;
         }   
-        if (spaces[3] === player && spaces[5] === player) {
-            heading.innerText = `${player} Wins`;
+            if (spaces[3] === player && spaces[5] === player) {
+                heading.innerText = `${player} Wins`;
                     }   
 
-                      if (spaces[2] === player && spaces[6] === player) {
+                 if (spaces[2] === player && spaces[6] === player) {
                         heading.innerText = `${player} Wins`;
                       }
                     }
-
                 }
                 
 
@@ -102,3 +100,11 @@ const playerWin = (player) => {
                     
                     currentPlayer = player1;
                 });
+
+                //Add score to the game
+                let score = 0,
+                    xScore = document.querySelector('.x-score'),
+                    oScore = document.querySelector('.o-score');
+
+                      xScore.innerText = score;
+                      oScore.innerText = score;
